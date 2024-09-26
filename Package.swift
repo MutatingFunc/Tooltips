@@ -17,6 +17,10 @@ let package = Package(
         .macCatalyst("17.0")
     ],
     products: [
+        .library(
+            name: "Tooltips",
+            targets: ["Tooltips"]
+        ),
         .iOSApplication(
             name: "Tooltips_Tests",
             targets: ["Tooltips_Tests"],
@@ -35,10 +39,6 @@ let package = Package(
                 .landscapeLeft,
                 .portraitUpsideDown(.when(deviceFamilies: [.pad]))
             ]
-        ),
-        .library(
-            name: "Tooltips",
-            targets: ["Tooltips"]
         )
     ],
     targets: [
