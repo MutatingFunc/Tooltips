@@ -116,7 +116,7 @@ struct TooltipHostModifier: ViewModifier {
                 if let tooltip {
                     GeometryReader { geometry in
                         let frame = geometry[tooltip.anchor]
-                        let verticalOffset: CGFloat = frame.height * ((geometry.size.height - frame.maxY) < 64 ? -1.2 : 1.2)
+                        let verticalOffset: CGFloat = ((geometry.size.height - frame.maxY) < 64 ? -frame.height - 4 : frame.height + 4)
                         tooltip.content
                             .padding(2)
                             .border(Color(uiColor: .systemGray5))
